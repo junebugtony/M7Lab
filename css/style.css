@@ -15,23 +15,33 @@ img {
   padding: 50px 20px;
   margin: 0 auto;
   max-width: 980px;
+  text-align: center;
 }
 
 .grid {
   margin: 0 auto;
   padding: 0 20px;
-  max-width: 980px;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
 }
 
 nav {
   background-color: #000;
   padding: .5em;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  margin-top: 0;
 }
 
 nav ul {
   margin: 0;
   padding: 0;
   list-style: none;
+  display: flex;
+  justify-content: space-around;
 }
 
 nav a {
@@ -42,10 +52,30 @@ nav a {
 
 .photos {
   list-style: none;
+  max-width: 40%;
   margin: 0;
   padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1px;
+}
+
+.photos img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .feature {
     width: 200px;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+/* Styling applied below a certain width, for tablets and mobile devices */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
 }
